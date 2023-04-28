@@ -1,0 +1,15 @@
+/                   -> dashboard
+/dashboard          -> dashboard
+
+/bookings           -> bookings
+/bookings/id        -> especific booking
+
+/rooms              -> rooms
+/rooms/id           -> especific room
+
+/users              -> users
+/users/id           -> especific user 
+
+/contact            -> contact
+
+/* (other routes)   -> error 404
