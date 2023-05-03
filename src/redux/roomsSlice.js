@@ -8,7 +8,7 @@ const delay = ( data ) => {
     });
 };
 
-export const getRooms = createAsyncThunk( 'users/getRooms', 
+export const getRooms = createAsyncThunk( 'rooms/getRooms', 
     async () => {
     try {
         const resp = await fetch( "/data/rooms.json" );
@@ -19,7 +19,7 @@ export const getRooms = createAsyncThunk( 'users/getRooms',
     }
 });
 
-export const getUniqueRoom = createAsyncThunk( 'users/getUniqueRoom', 
+export const getUniqueRoom = createAsyncThunk( 'rooms/getUniqueRoom', 
     async (id) => {
     try {
         const resp = await fetch( "/data/rooms.json" );

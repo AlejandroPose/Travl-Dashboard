@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../auth/AuthContext';
+import styled from 'styled-components';
 
 export const Login = () => {
 
@@ -16,18 +17,52 @@ export const Login = () => {
       setLoginFailed( true );
     }
   };
+
+  const AllContainer = styled.div`
+    margin: 40px;
+    text-align: center;
+    box-shadow: 0px 0px 10px #000000;
+    padding: 20px;
+  `;
+
+  const FormContainer = styled.form`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 50px;
+    align-items: center;
+    label {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+  `;
+
+  const ButtonSubmit = styled.input`
+    border: none;
+    background-color: #dddddd;
+    margin-top: 20px;
+    padding: 10px 50px;
+    font-weight: 900;
+    cursor: pointer;
+  `;
+
+  const SecondLabel = styled.label`
+    margin-top: 10px;
+  `;
     
   return (
-    <>
+    <AllContainer>
     <p>Name: aldros</p>
     <p>Password: 0000</p>
-    <form onSubmit={ (event) => handleSubmitLogin(event) }>
-      <label htmlFor="name">Name: </label><input type="text" name='name' />
-      <label htmlFor="password">Password</label><input type="password" />
-      <input type="submit" value="Login" />
-    </form>
+    <FormContainer onSubmit={ (event) => handleSubmitLogin(event) }>
+      <label htmlFor="name">Name: </label>
+      <input type="text" name='name' />
+      <SecondLabel htmlFor="password">Password: </SecondLabel>
+      <input type="password" />
+      <ButtonSubmit type="submit" value="Login" />
+    </FormContainer>
     { loginFailed && <><p>Error: name, password or both are incorrect</p></> }
-    </>
+    </AllContainer>
   );
 
 };

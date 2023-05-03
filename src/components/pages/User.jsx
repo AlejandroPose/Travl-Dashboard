@@ -63,7 +63,7 @@ export const User = () => {
         </div>
         <div>
             <TextData>Schedule</TextData>
-            <TextData>{ getSchedule( userData.schedule ) }</TextData>
+            {/* <TextData>{ getSchedule( userData.schedule ) }</TextData> */}
         </div>
         <LastChild>
             <TextData>Contact</TextData>

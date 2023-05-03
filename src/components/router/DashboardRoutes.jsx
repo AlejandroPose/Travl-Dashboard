@@ -5,6 +5,7 @@ import { Error404 } from '../common/Error404';
 import { Users } from '../pages/Users';
 import { User } from '../pages/User';
 import { Rooms } from '../pages/Rooms';
+import { Room } from '../pages/Room';
 
 export const DashboardRoutes = () => {
 
@@ -16,8 +17,8 @@ export const DashboardRoutes = () => {
         <Route path="/users" element={ <Users /> } />
         <Route path="/users/:userId" element={ <User /> } />
         <Route path="/rooms" element={ <Rooms /> } />
-        {/* 
         <Route path="/rooms/:roomId" element={ <Room /> } />
+        {/* 
         <Route path="/bookings" element={ <Bookings /> } />
         <Route path="/bookings/:bookingId" element={ <Booking /> } />
         <Route path="/contact" element={ <Contact /> } /> 
