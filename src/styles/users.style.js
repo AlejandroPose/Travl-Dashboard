@@ -1,30 +1,36 @@
 import styled from "styled-components";
 
 export const TableInformation = styled.table`
-    margin: 40px 10%;
-    border-collapse: collapse;
-    text-align: center;
-  `; 
+  margin: 40px 10%;
+  border-collapse: collapse;
+  text-align: center;
+`; 
 
 export const TitlesRow = styled.tr`
-    background-color: #dddddd;
-    color: black;
-    font-weight: 900;
-  `; 
-
-export const NameCell = styled.div`
-    display: flex;
-    align-items: center;
-  `;
-
-export const Cells = styled.td`
-    border: 2px solid #dddddd;
-  `;
+  background-color: #dddddd;
+  color: black;
+  font-weight: 900;
+`; 
 
 export const TitlesCells = styled.th`
-    border: 2px solid #dddddd;
-  `;
+  border: 2px solid #dddddd;
+`;
+
+export const NameCell = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Cells = styled.td`
+  border: 2px solid #dddddd;
+`;
 
 export const TextNameCell = styled.p`
-    margin: 0 10px;
-  `;
+  margin: 0 10px;
+`;
+
+export const TextTitleCells = styled.p`
+  margin: 0 auto;
+  width: fit-content;
+  cursor: pointer;
+`;

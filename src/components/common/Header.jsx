@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components';
 import { AuthContext } from '../../auth/AuthContext';
 import { useLocation } from 'react-router-dom';
 import { ActualPageText, HeaderContainer, LeftContentContainer, LogoutImg, RightContentContainer } from '../../styles/header.style';
@@ -12,11 +11,20 @@ export const Header = () => {
   const actualPage = path.pathname.split('/');
 
   const routes = {
+    dashboard: { 
+      title: "Dashboard",
+    },
     users: { 
       title: "Users",
     },
-    dashboard: { 
-      title: "Dashboard",
+    rooms: { 
+      title: "Rooms",
+    },
+    bookkings: { 
+      title: "Bookings",
+    },
+    contact: { 
+      title: "Contact",
     },
   };
 

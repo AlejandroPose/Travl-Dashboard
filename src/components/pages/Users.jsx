@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getUsers } from '../../redux/usersSlice';
+import { getUsers, updateState } from '../../redux/usersSlice';
 import { useNavigate } from 'react-router-dom';
-import { Cells, NameCell, TableInformation, TextNameCell, TitlesCells, TitlesRow } from '../../styles/users.style';
+import { Cells, NameCell, TableInformation, TextNameCell, TextTitleCells, TitlesCells, TitlesRow } from '../../styles/users.style';
 
 export const Users = () => {
 
@@ -48,7 +48,7 @@ export const Users = () => {
         case 6:
           days = days + 'Saturday ';
           break;
-        case 7:
+        case 0:
           days = days + 'Sunday ';
           break;
         default:
@@ -66,18 +66,87 @@ export const Users = () => {
     navigate(`/users/${id}`);
   };
 
-  
+  const handleSortTable = (filter) => {
+    let newArray = newUsersData.map( it => {
+      return it;
+    });
+    switch (filter) {
+      case "1":
+        newArray = newArray.sort(function(a,b) {
+          if (a.name > b.name) {
+            return 1;
+          }
+          if (a.name < b.name) {
+            return -1;
+          }
+          return 0;
+        });
+        dispatch( updateState(newArray) );
+        break;
+      case "2":
+        newArray = newArray.sort(function(a,b) {
+          if (a.job_description > b.job_description) {
+            return 1;
+          }
+          if (a.job_description < b.job_description) {
+            return -1;
+          }
+          return 0;
+        });
+        dispatch( updateState(newArray) );
+        break;
+      case "3":
+        newArray = newArray.sort(function(a,b) {
+          if (a.schedule > b.schedule) {
+            return 1;
+          }
+          if (a.schedule < b.schedule) {
+            return -1;
+          }
+          return 0;
+        });
+        dispatch( updateState(newArray) );
+        break;
+      case "4":
+        newArray = newArray.sort(function(a,b) {
+          if (a.phone > b.phone) {
+            return 1;
+          }
+          if (a.phone < b.phone) {
+            return -1;
+          }
+          return 0;
+        });
+        dispatch( updateState(newArray) );
+        break;
+      case "5":
+        newArray = newArray.sort(function(a,b) {
+          if (a.status > b.status) {
+            return 1;
+          }
+          if (a.status < b.status) {
+            return -1;
+          }
+          return 0;
+        });
+        dispatch( updateState(newArray) );
+        break;
+      default:
+        console.log('error');
+        break;
+    }
+  };
 
   return (
     <>
     <TableInformation>
       <thead>
         <TitlesRow>
-          <TitlesCells>Name</TitlesCells>
-          <TitlesCells>Job Description</TitlesCells>
-          <TitlesCells>Schedule</TitlesCells>
-          <TitlesCells>Contact</TitlesCells>
-          <TitlesCells>Status</TitlesCells>
+          <TitlesCells><TextTitleCells onClick={ () => handleSortTable("1") }>Name</TextTitleCells></TitlesCells>
+          <TitlesCells><TextTitleCells onClick={ () => handleSortTable("2") }>Job Description</TextTitleCells></TitlesCells>
+          <TitlesCells><TextTitleCells onClick={ () => handleSortTable("3") }>Schedule</TextTitleCells></TitlesCells>
+          <TitlesCells><TextTitleCells onClick={ () => handleSortTable("4") }>Contact</TextTitleCells></TitlesCells>
+          <TitlesCells><TextTitleCells onClick={ () => handleSortTable("5") }>Status</TextTitleCells></TitlesCells>
         </TitlesRow>
       </thead>
       <tbody>

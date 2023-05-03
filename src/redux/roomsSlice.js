@@ -8,34 +8,34 @@ const delay = ( data ) => {
     });
 };
 
-export const getUsers = createAsyncThunk( 'users/getUsers', 
+export const getRooms = createAsyncThunk( 'users/getRooms', 
     async () => {
     try {
-        const resp = await fetch( "/data/users.json" );
+        const resp = await fetch( "/data/rooms.json" );
         const data = await resp.json();
         return await delay( data );
     } catch (error) {
-        console.log('Error getUsers');
+        console.log('Error getRooms');
     }
 });
 
-export const getUniqueUser = createAsyncThunk( 'users/getUniqueUser', 
+export const getUniqueRoom = createAsyncThunk( 'users/getUniqueRoom', 
     async (id) => {
     try {
-        const resp = await fetch( "/data/users.json" );
+        const resp = await fetch( "/data/rooms.json" );
         const data = await resp.json();
-        const unique = data.find( user => user.id.toString() === id );
+        const unique = data.find( room => room.id.toString() === id );
         return await delay( unique );
     } catch (error) {
-        console.log('Error getUniqueUser');
+        console.log('Error getUniqueRoom');
     }
 });
 
-const usersSlice = createSlice({
-    name: "users",
+const roomsSlice = createSlice({
+    name: "rooms",
     initialState: {
         data: [],
-        uniqueUser: {},
+        uniqueRoom: {},
         isSuccess: false,
         message: "",
         isLoading: false,
@@ -46,28 +46,28 @@ const usersSlice = createSlice({
         }
     },
     extraReducers: {
-        [getUsers.pending]:(state, { payload }) => {
+        [getRooms.pending]:(state, { payload }) => {
             state.isLoading = true;
         },
-        [getUsers.fulfilled]:(state, { payload }) => {
+        [getRooms.fulfilled]:(state, { payload }) => {
             state.isLoading = false;
             state.data = payload;
             state.isSuccess = true;
         },
-        [getUsers.rejected]:(state, { payload }) => {
+        [getRooms.rejected]:(state, { payload }) => {
             state.message = payload;
             state.isLoading = false;
             state.isSuccess = false;
         },
-        [getUniqueUser.pending]:(state, { payload }) => {
+        [getUniqueRoom.pending]:(state, { payload }) => {
             state.isLoading = true;
         },
-        [getUniqueUser.fulfilled]:(state, { payload }) => {
+        [getUniqueRoom.fulfilled]:(state, { payload }) => {
             state.isLoading = false;
-            state.uniqueUser = payload;
+            state.uniqueRoom = payload;
             state.isSuccess = true;
         },
-        [getUniqueUser.rejected]:(state, { payload }) => {
+        [getUniqueRoom.rejected]:(state, { payload }) => {
             state.message = payload;
             state.isLoading = false;
             state.isSuccess = false;
@@ -75,5 +75,5 @@ const usersSlice = createSlice({
     },
 });
 
-export const { updateState } = usersSlice.actions;
-export default usersSlice;
+export const { updateState } = roomsSlice.actions;
+export default roomsSlice;

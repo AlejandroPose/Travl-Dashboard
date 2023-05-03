@@ -13,7 +13,7 @@
         "name": "Andras Posilva",
         "job_description": "Offer restaurant and activity recommendations and assist guests in arranging transportation.",
         "phone": "+34 689731713",
-        "schedule": [6, 7],
+        "schedule": [6, 0],
         "status": "",
         "image": "/imgs/medusa2.jpg"
     },
@@ -31,7 +31,7 @@
         "name": "Alejandro Posi",
         "job_description": "Anticipate guests needs in order to accommodate them and provide an exceptional guest experience.",
         "phone": "+34 689731715",
-        "schedule": [1, 3, 5, 7],
+        "schedule": [1, 3, 5, 0],
         "status": "",
         "image": "/imgs/medusa2.jpg"
     },
@@ -58,7 +58,7 @@
         "name": "josse Gasepo",
         "job_description": "Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc.",
         "phone": "+34 689731718",
-        "schedule": [1, 3, 7],
+        "schedule": [1, 3, 0],
         "status": "",
         "image": "/imgs/medusa.png"
     },
