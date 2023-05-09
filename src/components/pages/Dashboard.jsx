@@ -1,14 +1,7 @@
 import React from 'react'
-import styled from 'styled-components';
+import { DashboardContainer } from '../../styles/dashboard.style';
 
 export const Dashboard = () => {
-
-  const DashboardContainer = styled.div`
-    height: 90%;
-    p {
-      margin: 0;
-    }
-  `;
 
   return (
     <DashboardContainer>

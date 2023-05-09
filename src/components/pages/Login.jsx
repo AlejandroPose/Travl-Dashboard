@@ -19,21 +19,59 @@ export const Login = () => {
   };
 
   const AllContainer = styled.div`
-    margin: 40px;
-    text-align: center;
+    margin: 40px auto;
     box-shadow: 0px 0px 10px #000000;
     padding: 20px;
+    width: fit-content;
+  `;
+  
+  const LogoContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  `;
+
+  const TextLogoContainer = styled.div`
+    h1 {
+      margin: 0;
+    }
+    h6 {
+      margin: 0;
+    }
+  `;
+
+  const InformationLogin = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   `;
 
   const FormContainer = styled.form`
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin: 0 50px;
     align-items: center;
     label {
-      text-align: left;
       margin-bottom: 10px;
+    }
+  `;
+
+  const FirstPartForm = styled.div`
+    display: flex;
+    margin-bottom: 10px;
+    label {
+      width: 100px;
+    }
+  `;
+
+  const SecondPartForm = styled.div`
+    display: flex;
+    label {
+      width: 100px;
     }
   `;
 
@@ -44,24 +82,39 @@ export const Login = () => {
     padding: 10px 50px;
     font-weight: 900;
     cursor: pointer;
-  `;
-
-  const SecondLabel = styled.label`
-    margin-top: 10px;
+    border-radius: 5%;
+    transition: all 0.3s;
+    :hover {
+      background-color: black;
+      color: #dddddd;
+    }
   `;
     
   return (
     <AllContainer>
-    <p>Name: aldros</p>
-    <p>Password: 0000</p>
-    <FormContainer onSubmit={ (event) => handleSubmitLogin(event) }>
-      <label htmlFor="name">Name: </label>
-      <input type="text" name='name' />
-      <SecondLabel htmlFor="password">Password: </SecondLabel>
-      <input type="password" />
-      <ButtonSubmit type="submit" value="Login" />
-    </FormContainer>
-    { loginFailed && <><p>Error: name, password or both are incorrect</p></> }
+      <LogoContainer>
+        <img src="imgs/logoIcon.jpg" alt="Hotel logo img" />
+        <TextLogoContainer>
+          <h1><b>travl</b></h1>
+          <h6>Hotel Admin Dashboard</h6>
+        </TextLogoContainer>
+      </LogoContainer>
+      <InformationLogin>
+        <p>Name: aldros</p>
+        <p>Password: 0000</p>
+      </InformationLogin>
+      <FormContainer onSubmit={ (event) => handleSubmitLogin(event) }>
+        <FirstPartForm>
+          <label htmlFor="name">Name: </label>
+          <input type="text" name='name' />
+        </FirstPartForm>
+        <SecondPartForm>
+          <label htmlFor="password">Password: </label>
+          <input type="password" />
+        </SecondPartForm>
+        <ButtonSubmit type="submit" value="Login" />
+      </FormContainer>
+      { loginFailed && <><p>Error: name, password or both are incorrect</p></> }
     </AllContainer>
   );
 
