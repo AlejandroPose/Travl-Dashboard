@@ -39,7 +39,7 @@ export const SideBar = () => {
         <img src="imgs/rodajaPepino.jpg" alt="User img" />
         <p>{ user.name }</p>
         <p>{ user.email }</p>
-        <ButtonEditProfile onClick={ () => handleClickEditProfile() }>Edit Profile</ButtonEditProfile>
+        <ButtonEditProfile backgroundColor='#dddddd' data-testid='test-button' onClick={ () => handleClickEditProfile() }>Edit Profile</ButtonEditProfile>
       </UserInfoContainer>
       <MadeByInformation>
         <p>Travl Hotel Admin Dashboard</p>

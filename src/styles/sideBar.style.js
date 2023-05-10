@@ -82,13 +82,13 @@ export const UserInfoContainer = styled.div`
 
 export const ButtonEditProfile = styled.button`
     border: none;
-    background-color: #dddddd;
+    background-color: ${(props) => props.backgroundColor};
     color: black;
     padding: 10px;
     width: 60%;
     border-radius: 5%;
-  `;
+`;
 
 export const MadeByInformation = styled.div`
-    margin: 0 10%;
-  `;
+  margin: 0 10%;
+`;
