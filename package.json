@@ -1,4 +1,5 @@
 {
+  "homepage":"https://AlejandroPose.github.io/Travl-Dashboard",
   "name": "dashboard-app",
   "version": "0.1.0",
   "private": true,
@@ -41,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^12.12.0"
+    "cypress": "^12.12.0",
+    "gh-pages": "^5.0.0"
   }
 }

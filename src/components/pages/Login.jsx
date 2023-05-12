@@ -110,9 +110,9 @@ export const Login = () => {
         </FirstPartForm>
         <SecondPartForm>
           <label htmlFor="password">Password: </label>
-          <input type="password" />
+          <input type="password" name='password' />
         </SecondPartForm>
-        <ButtonSubmit type="submit" value="Login" />
+        <ButtonSubmit type="submit" value="Login" name='submit' />
       </FormContainer>
       { loginFailed && <><p>Error: name, password or both are incorrect</p></> }
     </AllContainer>
