@@ -87,6 +87,12 @@ export const ButtonEditProfile = styled.button`
     padding: 10px;
     width: 60%;
     border-radius: 5%;
+    transition: all 0.5s;
+    :hover {
+      cursor: pointer;
+      background-color: black;
+      color: #dddddd;
+    }
 `;
 
 export const MadeByInformation = styled.div`

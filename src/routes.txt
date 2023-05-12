@@ -12,4 +12,6 @@
 
 /contact            -> contact
 
+/login              -> login
+
 /* (other routes)   -> error 404

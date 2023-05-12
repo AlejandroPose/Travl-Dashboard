@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../auth/AuthContext';
-import styled from 'styled-components';
+import { AllContainer, ButtonSubmit, FirstPartForm, FormContainer, InformationLogin, SecondPartForm } from '../../styles/login.style';
+import { LogoContainer, TextLogoContainer } from '../../styles/sideBar.style';
 
 export const Login = () => {
 
@@ -17,83 +18,11 @@ export const Login = () => {
       setLoginFailed( true );
     }
   };
-
-  const AllContainer = styled.div`
-    margin: 40px auto;
-    box-shadow: 0px 0px 10px #000000;
-    padding: 20px;
-    width: fit-content;
-  `;
-  
-  const LogoContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    img {
-      width: 50px;
-      height: 50px;
-    }
-  `;
-
-  const TextLogoContainer = styled.div`
-    h1 {
-      margin: 0;
-    }
-    h6 {
-      margin: 0;
-    }
-  `;
-
-  const InformationLogin = styled.div`
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  `;
-
-  const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    label {
-      margin-bottom: 10px;
-    }
-  `;
-
-  const FirstPartForm = styled.div`
-    display: flex;
-    margin-bottom: 10px;
-    label {
-      width: 100px;
-    }
-  `;
-
-  const SecondPartForm = styled.div`
-    display: flex;
-    label {
-      width: 100px;
-    }
-  `;
-
-  const ButtonSubmit = styled.input`
-    border: none;
-    background-color: #dddddd;
-    margin-top: 20px;
-    padding: 10px 50px;
-    font-weight: 900;
-    cursor: pointer;
-    border-radius: 5%;
-    transition: all 0.3s;
-    :hover {
-      background-color: black;
-      color: #dddddd;
-    }
-  `;
     
   return (
     <AllContainer>
       <LogoContainer>
-        <img src="imgs/logoIcon.jpg" alt="Hotel logo img" />
+        <img src="/imgs/logoIcon.jpg" alt="Hotel logo img" />
         <TextLogoContainer>
           <h1><b>travl</b></h1>
           <h6>Hotel Admin Dashboard</h6>
