@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "image": "/imgs/room.jpg",
+        "guest": "Aldros Posirah",
+        "order_date": "02/02/2023",
+        "check_in": "02/04/2023",
+        "check-out": "02/08/2023"
+    },
+    {
+        "id": 2,
+        "image": "/imgs/room2.jpg",
+        "guest": "Andras Posilva",
+        "order_date": "02/12/2023",
+        "check_in": "02/18/2023",
+        "check-out": "02/28/2023"
+    }
+]
