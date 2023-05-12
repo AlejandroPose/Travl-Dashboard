@@ -41,7 +41,7 @@ export const Header = () => {
       <RightContentContainer>
         <img src="/imgs/card.png" alt="Message Icon" width='30px'/>
         <img src="/imgs/alert.png" alt="Alert Icon" width='25px'/>
-        <LogoutImg src="/imgs/logout.png" alt="Logout Icon" width='25px' onClick={ () => handleClickLogout() } />
+        <LogoutImg data-testid='imageLogout' src="/imgs/logout.png" alt="Logout Icon" width='25px' onClick={ () => handleClickLogout() } />
       </RightContentContainer>
     </HeaderContainer>
   );
