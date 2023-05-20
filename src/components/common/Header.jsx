@@ -35,13 +35,13 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <LeftContentContainer>
-        <img src="/imgs/menu.png" alt="Menu icon" width='40px'/>
+        <img src="imgs/menu.png" alt="Menu icon" width='40px'/>
         <ActualPageText>{ routes[actualPage[1]]?.title || 'Error 404' }</ActualPageText>
       </LeftContentContainer>
       <RightContentContainer>
-        <img src="/imgs/card.png" alt="Message Icon" width='30px'/>
-        <img src="/imgs/alert.png" alt="Alert Icon" width='25px'/>
-        <LogoutImg data-testid='imageLogout' src="/imgs/logout.png" alt="Logout Icon" width='25px' onClick={ () => handleClickLogout() } />
+        <img src="imgs/card.png" alt="Message Icon" width='30px'/>
+        <img src="imgs/alert.png" alt="Alert Icon" width='25px'/>
+        <LogoutImg data-testid='imageLogout' src="imgs/logout.png" alt="Logout Icon" width='25px' onClick={ () => handleClickLogout() } />
       </RightContentContainer>
     </HeaderContainer>
   );

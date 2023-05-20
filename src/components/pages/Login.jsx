@@ -22,7 +22,7 @@ export const Login = () => {
   return (
     <AllContainer>
       <LogoContainer>
-        <img src="/imgs/logoIcon.jpg" alt="Hotel logo img" />
+        <img src="imgs/logoIcon.jpg" alt="Hotel logo img" />
         <TextLogoContainer>
           <h1><b>travl</b></h1>
           <h6>Hotel Admin Dashboard</h6>

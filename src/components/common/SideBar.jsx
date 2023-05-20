@@ -14,7 +14,7 @@ export const SideBar = () => {
   return (
     <SideBarContainer>
       <LogoContainer>
-        <img src="/imgs/logoIcon.jpg" alt="Hotel logo img" />
+        <img src="imgs/logoIcon.jpg" alt="Hotel logo img" />
         <TextLogoContainer>
           <h1><b>travl</b></h1>
           <h6>Hotel Admin Dashboard</h6>
@@ -36,7 +36,7 @@ export const SideBar = () => {
         </ListContainer>
       </nav>
       <UserInfoContainer>
-        <img src="/imgs/rodajaPepino.jpg" alt="User img" />
+        <img src="imgs/rodajaPepino.jpg" alt="User img" />
         <p>{ user.name }</p>
         <p>{ user.email }</p>
         <ButtonEditProfile backgroundColor='#dddddd' data-testid='test-button' onClick={ () => handleClickEditProfile() }>Edit Profile</ButtonEditProfile>

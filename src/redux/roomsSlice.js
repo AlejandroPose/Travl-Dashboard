@@ -11,7 +11,7 @@ const delay = ( data ) => {
 export const getRooms = createAsyncThunk( 'rooms/getRooms', 
     async () => {
     try {
-        const resp = await fetch( "/data/rooms.json" );
+        const resp = await fetch( "data/rooms.json" );
         const data = await resp.json();
         return await delay( data );
     } catch (error) {
@@ -22,9 +22,9 @@ export const getRooms = createAsyncThunk( 'rooms/getRooms',
 export const getUniqueRoom = createAsyncThunk( 'rooms/getUniqueRoom', 
     async (id) => {
     try {
-        const resp = await fetch( "/data/rooms.json" );
-        const data = await resp.json();
-        const unique = data.find( room => room.id.toString() === id );
+        const resp1 = await fetch( "../data/rooms.json" );
+        const data1 = await resp1.json();
+        const unique = data1.find( room => room.id.toString() === id );
         return await delay( unique );
     } catch (error) {
         console.log('Error getUniqueRoom');
