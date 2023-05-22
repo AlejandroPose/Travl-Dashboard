@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const delay = ( data ) => {
     return new Promise( ( resolve ) => {
@@ -25,17 +25,37 @@ export const getUniqueUser = createAsyncThunk(
         return await delay( unique );
 });
 
+interface User {
+    id: number
+    name: string
+    job_description: string
+    phone: string
+    schedule: number[]
+    status: string
+    image: string
+};
+
+interface UsersState {
+    data?: User[]
+    uniqueUser?: User
+    isSuccess: boolean
+    message?: string
+    isLoading: boolean
+};
+
+const initialState: UsersState = {
+    data: [],
+    uniqueUser: undefined,
+    isSuccess: false,
+    message: "",
+    isLoading: false,
+};
+
 const usersSlice = createSlice({
     name: "users",
-    initialState: {
-        data: [],
-        uniqueUser: {},
-        isSuccess: false,
-        message: "",
-        isLoading: false,
-    },
+    initialState,
     reducers: {
-        updateState: ( state, action ) => {
+        updateState: ( state, action: PayloadAction<User[]> ) => {
             state.data = action.payload;
         }
     },

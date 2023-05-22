@@ -45,33 +45,33 @@ const roomsSlice = createSlice({
             state.data = action.payload;
         }
     },
-    extraReducers: {
-        [getRooms.pending]:(state, { payload }) => {
+    extraReducers: (builder) => {
+        builder.addCase(getRooms.pending, (state, { payload }) => {
             state.isLoading = true;
-        },
-        [getRooms.fulfilled]:(state, { payload }) => {
+        })
+        builder.addCase(getRooms.fulfilled, (state, { payload }) => {
             state.isLoading = false;
             state.data = payload;
             state.isSuccess = true;
-        },
-        [getRooms.rejected]:(state, { payload }) => {
+        })
+        builder.addCase(getRooms.rejected, (state, { payload }) => {
             state.message = payload;
             state.isLoading = false;
             state.isSuccess = false;
-        },
-        [getUniqueRoom.pending]:(state, { payload }) => {
+        })
+        builder.addCase(getUniqueRoom.pending, (state, { payload }) => {
             state.isLoading = true;
-        },
-        [getUniqueRoom.fulfilled]:(state, { payload }) => {
+        })
+        builder.addCase(getUniqueRoom.fulfilled, (state, { payload }) => {
             state.isLoading = false;
             state.uniqueRoom = payload;
             state.isSuccess = true;
-        },
-        [getUniqueRoom.rejected]:(state, { payload }) => {
+        })
+        builder.addCase(getUniqueRoom.rejected, (state, { payload }) => {
             state.message = payload;
             state.isLoading = false;
             state.isSuccess = false;
-        },
+        })
     },
 });
 
