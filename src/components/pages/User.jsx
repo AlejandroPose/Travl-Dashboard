@@ -6,50 +6,53 @@ import { FirstChild, LastChild, TextData, UserContainer } from '../../styles/use
 
 export const User = () => {
 
-    const dispatch = useDispatch();
-    const { userId } = useParams();
+  const dispatch = useDispatch();
+  const { userId } = useParams();
 
-    useEffect(() => {
-        dispatch(getUniqueUser(userId));
-    }, []);
+  useEffect(() => {
+      dispatch(getUniqueUser(userId));
+  }, []);
 
-    const userData = useSelector( state => state.users.uniqueUser ); 
+  const userData = useSelector( state => state.users.uniqueUser ); 
 
-    const getSchedule = ( scheduleArray ) => {
-        let days = '';
-        scheduleArray.map( day => {
-          switch (day) {
-            case 1:
-              days = days + 'Monday ';
-              break;
-            case 2:
-              days = days + 'Tuesday ';
-              break;
-            case 3:
-              days = days + 'Wednesday ';
-              break;
-            case 4:
-              days = days + 'Thursday ';
-              break;
-            case 5:
-              days = days + 'Friday ';
-              break;
-            case 6:
-              days = days + 'Saturday ';
-              break;
-            case 7:
-              days = days + 'Sunday ';
-              break;
-            default:
-              break;
-          }
-          return day;
-        });
-        days = days.replaceAll(' ', ', ');
-        days = days.substr(0, days.length - 2);
-        return days;
-    };
+  const getSchedule = ( scheduleArray ) => {
+      let days = '';
+      scheduleArray.map( day => {
+        switch (day) {
+          case 1:
+            days = days + 'Monday ';
+            break;
+          case 2:
+            days = days + 'Tuesday ';
+            break;
+          case 3:
+            days = days + 'Wednesday ';
+            break;
+          case 4:
+            days = days + 'Thursday ';
+            break;
+          case 5:
+            days = days + 'Friday ';
+            break;
+          case 6:
+            days = days + 'Saturday ';
+            break;
+          case 7:
+            days = days + 'Sunday ';
+            break;
+          default:
+            break;
+        }
+        return day;
+      });
+      days = days.replaceAll(' ', ', ');
+      days = days.substr(0, days.length - 2);
+      return days;
+  };
 
+  if (!userData) {
+    return "Loading";
+  }
   return (
     <UserContainer>
         <FirstChild>

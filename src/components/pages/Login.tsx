@@ -10,8 +10,8 @@ export const Login = () => {
 
   const handleSubmitLogin = (e) => {
     e.preventDefault();
-    const name = e.target[0].value.toLocaleLowerCase();
-    const password = e.target[1].value.toLocaleLowerCase();
+    const name: string = e.target[0].value.toLocaleLowerCase();
+    const password: string = e.target[1].value.toLocaleLowerCase();
     if ( name === 'aldros' && password === '0000' ) {
       login( 'Aldros Posirah', 'aldros@gmail.com' );
     } else {
