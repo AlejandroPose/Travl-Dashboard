@@ -28,7 +28,9 @@ export const SideBar = () => {
           <li>
             <NavLink to='/rooms'>Rooms</NavLink>
           </li>
-          <li>Bookings</li>
+          <li>
+            <NavLink to='/bookings'>Bookings</NavLink>
+          </li>
           <li>
             <NavLink to='/users'>Users</NavLink>
           </li>

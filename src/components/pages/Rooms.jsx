@@ -136,7 +136,7 @@ export const Rooms = () => {
       { newRoomsData.map( room => {
         return (
         <tr key={ room.id } onClick={ () => handleLinkUserID( room.id ) }>
-          <Cells><NameCell><img src={ room.image } alt="user img" width='100px'/><TextNameCell>{ room.name }</TextNameCell></NameCell></Cells>
+          <Cells><NameCell><img src={ room.image } alt="room img" width='100px'/><TextNameCell>{ room.name }</TextNameCell></NameCell></Cells>
           <Cells>{ room.bed_type }</Cells>
           <Cells>{ room.room_floor }</Cells>
           <Cells>{ room.facilities }</Cells>

@@ -20,7 +20,7 @@ export const Header = () => {
     rooms: { 
       title: "Rooms",
     },
-    bookkings: { 
+    bookings: { 
       title: "Bookings",
     },
     contact: { 
