@@ -6,7 +6,7 @@
         "phone": "+34 689731712",
         "schedule": [1, 2, 3, 4, 5],
         "status": "",
-        "image": "/imgs/medusa.png"
+        "image": "imgs/medusa.png"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "phone": "+34 689731713",
         "schedule": [6, 0],
         "status": "",
-        "image": "/imgs/medusa2.jpg"
+        "image": "imgs/medusa2.jpg"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "phone": "+34 689731714",
         "schedule": [2, 4, 6],
         "status": "",
-        "image": "/imgs/medusa.png"
+        "image": "imgs/medusa.png"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "phone": "+34 689731715",
         "schedule": [1, 3, 5, 0],
         "status": "",
-        "image": "/imgs/medusa2.jpg"
+        "image": "imgs/medusa2.jpg"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "phone": "+34 689731716",
         "schedule": [1, 2, 3], 
         "status": "",
-        "image": "/imgs/medusa.png"
+        "image": "imgs/medusa.png"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "phone": "+34 689731717",
         "schedule": [4, 5, 6], 
         "status": "",
-        "image": "/imgs/medusa2.jpg"
+        "image": "imgs/medusa2.jpg"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "phone": "+34 689731718",
         "schedule": [1, 3, 0],
         "status": "",
-        "image": "/imgs/medusa.png"
+        "image": "imgs/medusa.png"
     },
     {
         "id": 8,
@@ -69,6 +69,6 @@
         "phone": "+34 689731719",
         "schedule": [2, 4], 
         "status": "",
-        "image": "/imgs/medusa2.jpg"
+        "image": "imgs/medusa2.jpg"
     }
 ]

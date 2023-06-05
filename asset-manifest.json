@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Travl-Dashboard/static/css/main.5d12246f.css",
-    "main.js": "/Travl-Dashboard/static/js/main.66570298.js",
+    "main.js": "/Travl-Dashboard/static/js/main.7df7940f.js",
     "index.html": "/Travl-Dashboard/index.html",
     "main.5d12246f.css.map": "/Travl-Dashboard/static/css/main.5d12246f.css.map",
-    "main.66570298.js.map": "/Travl-Dashboard/static/js/main.66570298.js.map"
+    "main.7df7940f.js.map": "/Travl-Dashboard/static/js/main.7df7940f.js.map"
   },
   "entrypoints": [
     "static/css/main.5d12246f.css",
-    "static/js/main.66570298.js"
+    "static/js/main.7df7940f.js"
   ]
 }
