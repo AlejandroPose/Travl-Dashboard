@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Cells, NameCell, TableInformation, TextNameCell, TextTitleCells, TitlesCells, TitlesRow } from '../../styles/users.style';
 import { getRooms, updateState } from '../../redux/roomsSlice';
+import { Imagen } from '../common/Imagen';
 
 export const Rooms = () => {
 
@@ -10,6 +11,7 @@ export const Rooms = () => {
 
   useEffect(() => {
     dispatch(getRooms());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   const roomsData = useSelector( state => state.rooms.data ); 
@@ -136,14 +138,14 @@ export const Rooms = () => {
       { newRoomsData.map( room => {
         return (
         <tr key={ room.id } onClick={ () => handleLinkUserID( room.id ) }>
-          <Cells><NameCell><img src={ room.image } alt="room img" width='100px'/><TextNameCell>{ room.name }</TextNameCell></NameCell></Cells>
+          <Cells><NameCell><Imagen url={room.image} width='100px' /><TextNameCell>{ room.name }</TextNameCell></NameCell></Cells>
           <Cells>{ room.bed_type }</Cells>
           <Cells>{ room.room_floor }</Cells>
           <Cells>{ room.facilities }</Cells>
           <Cells>{ getPrice(room.price, room.offer, room.discount) }</Cells>
           <Cells>{ room.status }</Cells>
         </tr>
-        );
+        );//<img src={ room.image } alt="room img" width='100px'/>
       }) }
       </tbody>
     </TableInformation>

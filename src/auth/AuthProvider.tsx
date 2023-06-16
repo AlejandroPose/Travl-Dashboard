@@ -2,8 +2,13 @@ import { useReducer } from "react";
 import { actions } from "./Actions";
 import { AuthContext } from "./AuthContext";
 import { authReducer } from "./authReducer";
+import { fetchApiLogin } from "../functions/fetchApi";
 
-export const AuthProvider = ({ children }) => {
+interface Props {
+    children: React.ReactNode
+}
+
+export const AuthProvider = ({ children }: Props) => {
 
     const init = () => {
         const user = JSON.parse( localStorage.getItem('user') );
@@ -15,10 +20,12 @@ export const AuthProvider = ({ children }) => {
 
     const [authState, dispatch] = useReducer( authReducer, {}, init );
 
-    const login = ( name = '', email = '' ) => {
+    const login = async ( name = '', email = '' ) => {
+        const token = await fetchApiLogin('/login', { "email": "aldrosposirah@gmail.com", "password": "0000" });
         const user = {
             name: name,
             email: email,
+            token: token.token
         };
         const action = {
             type: actions.login,

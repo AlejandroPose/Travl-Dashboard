@@ -1,12 +1,23 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { fetchApi, fetchGet } from "../functions/fetchApi";
 
 interface User {
-    id: number
+    _id: string
     name: string
     job_description: string
     phone: string
-    schedule: number[]
-    status: string
+    schedule: string
+    image: string
+    email: string
+    password: string
+    status?: string
+};
+
+interface UserNew {
+    name: string
+    job_description: string
+    phone: string
+    schedule: string
     image: string
 };
 
@@ -18,30 +29,33 @@ interface UsersState {
     isLoading: boolean
 };
 
-const delay = ( data ) => {
-    return new Promise( ( resolve ) => {
-        setTimeout( () => {
-            resolve( data );
-        }, 200);
-    });
-};
-
 export const getUsers = createAsyncThunk( 
     'users/getUsers', 
     async () => {
-        const resp = await fetch( "data/users.json" );
-        const data = await resp.json();
-        return await delay( data ) as User[];
+        const resp = await fetchGet('/users');
+        return resp as User[];
 });
 
 export const getUniqueUser = createAsyncThunk( 
     'users/getUniqueUser', 
     async (id: string) => {
-        const resp = await fetch( "../data/users.json" );
-        const data = await resp.json();
-        const unique = data.find( user => user.id.toString() === id );
-        return await delay( unique ) as User;
+        const resp = await fetchGet(`/users/${id}`);
+        return await resp as User;
 });
+
+export const postUser = createAsyncThunk( 
+    'users/postUser', 
+    async (obj: UserNew) => {
+        const resp = await fetchApi(`/users`, 'POST', obj);
+        return await resp as User;
+});
+
+// export const putUser = createAsyncThunk( 
+//     'users/putUser', 
+//     async (id: string, obj: UserNew) => {
+//         const resp = await fetchApi(`/users/${id}`, 'PUT', obj);
+//         return await resp as User;
+// });
 
 const initialState: UsersState = {
     data: [],
@@ -86,6 +100,30 @@ const usersSlice = createSlice({
             state.isLoading = false;
             state.isSuccess = false;
         })
+        builder.addCase(postUser.pending, (state, action) => {
+            state.isLoading = true;
+        })
+        builder.addCase(postUser.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.isSuccess = true;
+        })
+        builder.addCase(postUser.rejected, (state, action) => {
+            state.message = action.payload as string;
+            state.isLoading = false;
+            state.isSuccess = false;
+        })
+        // builder.addCase(putUser.pending, (state, action) => {
+        //     state.isLoading = true;
+        // })
+        // builder.addCase(putUser.fulfilled, (state, action) => {
+        //     state.isLoading = false;
+        //     state.isSuccess = true;
+        // })
+        // builder.addCase(putUser.rejected, (state, action) => {
+        //     state.message = action.payload as string;
+        //     state.isLoading = false;
+        //     state.isSuccess = false;
+        // })
     },
 });
 

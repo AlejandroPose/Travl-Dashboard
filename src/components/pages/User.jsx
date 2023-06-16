@@ -3,6 +3,7 @@ import { getUniqueUser } from '../../redux/usersSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FirstChild, LastChild, TextData, UserContainer } from '../../styles/user.style';
+import { Imagen } from '../common/Imagen';
 
 export const User = () => {
 
@@ -11,6 +12,7 @@ export const User = () => {
 
   useEffect(() => {
       dispatch(getUniqueUser(userId));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const userData = useSelector( state => state.users.uniqueUser ); 
@@ -51,12 +53,12 @@ export const User = () => {
   };
 
   if (!userData) {
-    return "Loading";
+    return <>Loading</>;
   }
   return (
     <UserContainer>
         <FirstChild>
-            <img src={ userData.image } alt="user img" width='300px' />
+            <Imagen url={ userData.image } width='300px' />
             <h1>{ userData.name }</h1>
         </FirstChild>
         <div>
@@ -65,7 +67,7 @@ export const User = () => {
         </div>
         <div>
             <TextData>Schedule</TextData>
-            <TextData>{ userData.schedule && getSchedule( userData.schedule ) }</TextData>
+            <TextData>{ userData.schedule }</TextData>
         </div>
         <LastChild>
             <TextData>Contact</TextData>

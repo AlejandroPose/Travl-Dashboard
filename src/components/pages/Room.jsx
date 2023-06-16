@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FirstChild, LastChild, TextData, UserContainer } from '../../styles/user.style';
 import { getUniqueRoom } from '../../redux/roomsSlice';
+import { Imagen } from '../common/Imagen';
 
 export const Room = () => {
 
@@ -11,6 +12,7 @@ export const Room = () => {
 
     useEffect(() => {
         dispatch(getUniqueRoom(roomId));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const roomData = useSelector( state => state.rooms.uniqueRoom ); 
@@ -31,13 +33,13 @@ export const Room = () => {
     const newRoomData = getDiscounts( roomData );
 
     if (!roomData) {
-        return "Loading";
+        return <>Loading</>;
     }
 
     return (
         <UserContainer>
             <FirstChild>
-                <img src={ newRoomData.image } alt="user img" width='300px' />
+                <Imagen url={newRoomData.image} width='300px'/>
                 <h1>{ newRoomData.name }</h1>
             </FirstChild>
             <div>

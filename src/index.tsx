@@ -9,7 +9,7 @@ import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  //<React.StrictMode>
+  <React.StrictMode>
     <BrowserRouter basename='/Travl-Dashboard'>
       <AuthProvider>
         <Provider store={ store }>
@@ -17,5 +17,5 @@ root.render(
         </Provider>
       </AuthProvider>
     </BrowserRouter>
-  //</React.StrictMode>
+  </React.StrictMode>
 );

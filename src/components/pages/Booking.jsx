@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FirstChild, LastChild, TextData, UserContainer } from '../../styles/user.style';
 import { getUniqueBooking } from '../../redux/bookingsSlice';
+import { Imagen } from '../common/Imagen';
 
 export const Booking = () => {
 
@@ -11,6 +12,7 @@ export const Booking = () => {
 
     useEffect(() => {
         dispatch(getUniqueBooking(bookingId));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const bookingData = useSelector( state => state.bookings.uniqueBooking ); 
@@ -31,13 +33,13 @@ export const Booking = () => {
     };
 
     if (!bookingData) {
-        return "Loading";
+        return <>Loading</>;
     }
 
     return (
         <UserContainer>
             <FirstChild>
-                <img src={ bookingData.image } alt="user img" width='300px' />
+                <Imagen url={bookingData.image} width='300px'/>
                 <h1>{ bookingData.guest }</h1>
             </FirstChild>
             <div>

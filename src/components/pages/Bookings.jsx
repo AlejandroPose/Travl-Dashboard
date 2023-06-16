@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Cells, NameCell, TableInformation, TextNameCell, TextTitleCells, TitlesCells, TitlesRow } from '../../styles/users.style';
 import { getBookings, updateState } from '../../redux/bookingsSlice';
 import { CreateButton } from '../../styles/bookings.style';
+import { Imagen } from '../common/Imagen';
 
 export const Bookings = () => {
 
@@ -11,6 +12,7 @@ export const Bookings = () => {
 
   useEffect(() => {
     dispatch(getBookings());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   const bookingsData = useSelector( state => state.bookings.data ); 
@@ -153,7 +155,7 @@ export const Bookings = () => {
       { bookingsData.map( booking => {
         return (
         <tr key={ booking.id } onClick={ () => handleLinkUserID( booking.id ) }>
-          <Cells><NameCell><img src={ booking.image } alt="booking img" width='100px'/><TextNameCell>{ booking.guest }</TextNameCell></NameCell></Cells>
+          <Cells><NameCell><Imagen url={booking.image} width='100px'/><TextNameCell>{ booking.guest }</TextNameCell></NameCell></Cells>
           <Cells>{ booking.orderDate }</Cells>
           <Cells>{ booking.checkIn }</Cells>
           <Cells>{ booking.checkOut }</Cells>

@@ -8,6 +8,7 @@ import { Rooms } from '../pages/Rooms';
 import { Room } from '../pages/Room';
 import { Bookings } from '../pages/Bookings';
 import { Booking } from '../pages/Booking';
+import { Contact } from '../pages/Contact';
 
 export const DashboardRoutes = () => {
 
@@ -22,9 +23,7 @@ export const DashboardRoutes = () => {
         <Route path="/*" element={ <Error404 /> } />
         <Route path="/bookings" element={ <Bookings /> } />
         <Route path="/bookings/:bookingId" element={ <Booking /> } />
-        {/* 
         <Route path="/contact" element={ <Contact /> } /> 
-        */}
     </Routes>
   );
 

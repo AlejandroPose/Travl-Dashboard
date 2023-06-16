@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../../auth/AuthContext';
 import { useLocation } from 'react-router-dom';
 import { ActualPageText, HeaderContainer, LeftContentContainer, LogoutImg, RightContentContainer } from '../../styles/header.style';
+import { Imagen } from './Imagen';
 
 export const Header = () => {
 
@@ -32,16 +33,24 @@ export const Header = () => {
     logout();
   };
 
+  const handleSideBarWrap = () => {
+    if (document.getElementById('sideBarCont').style.display !== 'none') {
+      document.getElementById('sideBarCont').style.display = 'none';
+    } else {
+      document.getElementById('sideBarCont').style.display = 'flex';
+    }
+  };
+
   return (
     <HeaderContainer>
-      <LeftContentContainer>
-        <img src="imgs/menu.png" alt="Menu icon" width='40px'/>
+      <LeftContentContainer id='leftCont'>
+        <Imagen onClick={ () => handleSideBarWrap() } url="imgs/menu.png" width='40px'/>
         <ActualPageText>{ routes[actualPage[1]]?.title || 'Error 404' }</ActualPageText>
       </LeftContentContainer>
       <RightContentContainer>
-        <img src="imgs/card.png" alt="Message Icon" width='30px'/>
-        <img src="imgs/alert.png" alt="Alert Icon" width='25px'/>
-        <LogoutImg data-testid='imageLogout' src="imgs/logout.png" alt="Logout Icon" width='25px' onClick={ () => handleClickLogout() } />
+        <Imagen url="imgs/card.png" width='30px'/>
+        <Imagen url="imgs/alert.png" width='25px'/>
+        <LogoutImg data-testid='imageLogout' src={`${process.env.PUBLIC_URL}/imgs/logout.png`} alt="Logout Icon" width='25px' onClick={ () => handleClickLogout() } />
       </RightContentContainer>
     </HeaderContainer>
   );

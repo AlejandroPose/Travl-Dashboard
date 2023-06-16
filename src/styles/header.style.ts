@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
     width: 100%;
-    height: 10%;
-    min-height: 50px;
-    max-height: 80px;
+    height: 80px;
+    min-height: 80px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: #00000005;
+    transition: 0.5s all;
   `;
 
 export const LeftContentContainer = styled.div`
@@ -18,6 +18,9 @@ export const LeftContentContainer = styled.div`
     align-items: center;
     gap: 20px;
     margin-left: 20px;
+    img {
+      cursor: pointer;
+    }
   `;
 
 export const ActualPageText = styled.h1`
@@ -31,6 +34,9 @@ export const RightContentContainer = styled.div`
     align-items: center;
     gap: 50px;
     margin-right: 20px;
+    img {
+      cursor: pointer;
+    }
   `;
 
 export const LogoutImg = styled.img`

@@ -1,19 +1,37 @@
 import styled from "styled-components";
 
+export const ButtonCreate = styled.button`
+  padding: 5px 10px;
+  width: auto;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  background-color: rgb(19, 88, 70);
+  width: 150px;
+  margin-left: 100%;
+  transform: translateX(-180%);
+  margin-top: 20px;
+  cursor: pointer;
+  :hover {
+    background-color: rgba(19, 88, 70, 0.8);
+  }
+`;
+
 export const TableInformation = styled.table`
   margin: 40px 10%;
   border-collapse: collapse;
   text-align: center;
+  border-radius: 8px;
+  background-color: white;
 `; 
 
 export const TitlesRow = styled.tr`
-  background-color: #dddddd;
   color: black;
   font-weight: 900;
 `; 
 
 export const TitlesCells = styled.th`
-  border: 2px solid #dddddd;
+  padding: 10px;
 `;
 
 export const NameCell = styled.div`
@@ -22,7 +40,7 @@ export const NameCell = styled.div`
 `;
 
 export const Cells = styled.td`
-  border: 2px solid #dddddd;
+padding: 10px;
 `;
 
 export const TextNameCell = styled.p`
