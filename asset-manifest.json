@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/Travl-Dashboard/static/css/main.5d12246f.css",
-    "main.js": "/Travl-Dashboard/static/js/main.7df7940f.js",
+    "main.css": "/Travl-Dashboard/static/css/main.4e37f8f4.css",
+    "main.js": "/Travl-Dashboard/static/js/main.90b3831c.js",
+    "static/js/787.788303ae.chunk.js": "/Travl-Dashboard/static/js/787.788303ae.chunk.js",
+    "static/media/logo-hotel.svg": "/Travl-Dashboard/static/media/logo-hotel.888c49f317b7b1fc099fb617b669835e.svg",
+    "static/media/slick.svg": "/Travl-Dashboard/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Travl-Dashboard/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Travl-Dashboard/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Travl-Dashboard/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Travl-Dashboard/index.html",
-    "main.5d12246f.css.map": "/Travl-Dashboard/static/css/main.5d12246f.css.map",
-    "main.7df7940f.js.map": "/Travl-Dashboard/static/js/main.7df7940f.js.map"
+    "main.4e37f8f4.css.map": "/Travl-Dashboard/static/css/main.4e37f8f4.css.map",
+    "main.90b3831c.js.map": "/Travl-Dashboard/static/js/main.90b3831c.js.map",
+    "787.788303ae.chunk.js.map": "/Travl-Dashboard/static/js/787.788303ae.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d12246f.css",
-    "static/js/main.7df7940f.js"
+    "static/css/main.4e37f8f4.css",
+    "static/js/main.90b3831c.js"
   ]
 }
